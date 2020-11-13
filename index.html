@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Тестовое задание LiveHTML header</title>
+</head>
+<body>
+
+    
+    <header class="header">
+        <div class="container">
+            <div class="header__top">
+                <div class="header__logo">
+                    <!-- не стал оборачивать логотип в ссылку, т.к. если это главная страница, ты ссылка на главную это не очень хорошая практика
+                    на внутренних страницах лого обычно оборачиваю в ссылку на главную страницу -->
+                    <img class="header__logo-image" src="img/logo.jpg" width="210" height="111" alt="Логотип: Магазин инструмерта">
+                    <h1 class="header__title">Магазин инструмента</h1>
+                </div>
+                <div class="header__content">
+                    <!-- верхнее меню и блок авторизации пользователя -->
+                    <div class="header__content-top">
+                        <nav class="header__nav-secondary nav-secondary">
+                            <ul class="nav-secondary__list">
+                                <li class="nav-secondary__item">
+                                    <a href="" class="nav-secondary__link">Каталог инструментов</a>
+                                </li>
+                                <li class="nav-secondary__item">
+                                    <a href="" class="nav-secondary__link">Все для сада</a>
+                                </li>
+                                <li class="nav-secondary__item">
+                                    <a href="" class="nav-secondary__link">Ручной инструмент</a>
+                                </li>
+                                <li class="nav-secondary__item">
+                                    <a href="" class="nav-secondary__link">Электрика</a>
+                                </li>
+                                <li class="nav-secondary__item">
+                                    <a href="" class="nav-secondary__link">Доставка</a>
+                                </li>
+                                <li class="nav-secondary__item">
+                                    <a href="" class="nav-secondary__link">Оплата</a>
+                                </li>
+                                <li class="nav-secondary__item">
+                                    <a href="" class="nav-secondary__link">О нас</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="header__user-navigation">
+                            <!-- Обернул ссылкой, на случай если будет отдельная страница регистрации и авторизации,
+                            если будет popup то сделал бы в тег <button> -->
+                            <a href="#" class="header__user-signup">Вход</a>
+                            <span class="header__user-separator">|</span>
+                            <a href="#" class="header__user-signin">Регистрация</a>
+                        </div>
+                    </div>
+                    <div class="header__content-bottom content-bottom">
+
+                        <!-- Баннер -->
+                        <a href="#" class="content-bottom__banner banner">
+                            <img class="banner__image" src="https://via.placeholder.com/253x70" width="253" height="70" alt="Рекламный банер">
+                        </a>
+
+                        <!-- Элементы пользователя (корзина, избранное, сравнение) -->
+                        <div class="content-bottom__user-cart user-cart">
+                            <div class="user-cart__info-wrapper">
+                                <div class="user-cart__item-wrapper">
+                                    <!-- Иконки я не стал оборачивать в ссылки, но этот момент я бы уточнил у дизайнера -->
+                                    <svg class="user-cart__icon--cart">
+                                        <use href="sprite.svg#cart">
+                                        </use>
+                                    </svg>
+                                    <a class="user-cart__link user-cart__link--cart" href="#">
+                                        <!-- Добавил class элементам, чтобы в дальнейшем можно было обращаться к ним через JS -->
+                                        <span class="cartCount">3</span> шт. /
+                                        <span class="cartSumm">17 250</span>р.
+                                    </a>
+                                </div>
+                                <div class="user-cart__item-wrapper">
+                                    <svg class="user-cart__icon--fav">
+                                        <use href="sprite.svg#fav"></use>
+                                    </svg>
+                                    <a class="user-cart__link" href="#">Избранное <span class="favCount">(7)</span></a>
+                                </div>
+                                <div class="user-cart__item-wrapper">
+                                    <svg class="user-cart__icon--balance">
+                                        <use href="sprite.svg#balance"></use>
+                                    </svg>
+                                    <a class="user-cart__link" href="#">К сравнению <span class="balanceCount">(5)</span></a>
+                                </div>
+                            </div>
+
+                            <!-- Блок с товарами, добавленных в корзину -->
+                            <div class="user-cart__cart-wrapper">
+                                    <a class="user-cart__cart-block" href="#">
+                                        <img class="user-cart__cart-image" src="img/instrument/instrument-1.jpg" alt="Шуруповерт 1" width="51" height="51">
+                                    </a>
+                                    <a class="user-cart__cart-block" href="#">
+                                        <img class="user-cart__cart-image" src="img/instrument/instrument-2.jpg" alt="Шуруповерт 2" width="45" height="37">
+                                    </a>
+                                    <a class="user-cart__cart-block" href="#">
+                                        <img class="user-cart__cart-image" src="img/instrument/instrument-3.jpg" alt="Шуруповерт 3" width="53" height="40">
+                                    </a>
+                            </div>
+                        </div>
+
+                        <!-- часы работы и телефон -->
+                        <div class="header__info info">
+                            <div class="info__working-hours-wrapper">
+                                <p class="info__working-hours-text">Время работы:</p>
+                                <p class="info__working-hours-time">10:00 — 19:00</p>
+                            </div>
+                            <a class="info__phone" href="tel:+74957212525">8&nbsp;495&nbsp;721&#8209;25&#8209;25</a>
+                            <div class="info__location">
+                                <button class="info__location-city">Москва</button>
+                                <button class="info__location-change">сменить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__bottom menu">
+                <!-- Поиск -->
+                <form class="menu__search-wrapper" action="POST">
+                    <label class="menu__search-btn" for="search">Поиск
+                        <svg class="menu__search-icon">
+                            <use href="sprite.svg#search"></use>
+                        </svg>
+                    </label>
+                    <input class="menu__search-input" type="text" name="search" id="search">
+                </form>
+
+                <!-- Основное меню -->
+                <nav class="menu__nav">
+                    <ul class="menu__nav-list">
+                        <li class="menu__nav-item">
+                            <a class="menu__nav-link menu__nav-link--active" href="#">Перфораторы</a>
+                        </li>
+                        <li class="menu__nav-item">
+                            <a class="menu__nav-link" href="#">Дрели</a>
+                        </li>
+                        <li class="menu__nav-item">
+                            <a class="menu__nav-link" href="#">Шлифмашины</a>
+                        </li>
+                        <li class="menu__nav-item">
+                            <a class="menu__nav-link" href="#">Пистолеты</a>
+                        </li>
+                        <li class="menu__nav-item">
+                            <a class="menu__nav-link" href="#">Электропилы</a>
+                        </li>
+                        <li class="menu__nav-item">
+                            <a class="menu__nav-link" href="#">Набор инструментов</a>
+                        </li>
+                        <li class="menu__nav-item">
+                            <a class="menu__nav-link" href="#">Аксессуары</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Блок распродажа, обернул в ссылку т.к. возможно это ведет на отдельную страницу с распродажей, 
+                    я бы уточнил у дизайнера -->
+                <a class="menu__sale" href="#">Распродажа</a>
+            </div>
+        </div>
+    </header>
+    
+</body>
+</html>
